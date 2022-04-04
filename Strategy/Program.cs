@@ -1,9 +1,14 @@
 ﻿using Strategy;
 using Strategy.Rota;
+using Strategy.Sort;
+
+//Client
 
 Frete();
 
 Rota();
+
+OrderList();
 
 void Frete()
 {
@@ -40,6 +45,26 @@ void Rota()
     IRota rotaOnibus = new RotaOnibus();
     onibus.Rota(rotaOnibus);
     Console.WriteLine($"Calculando rota de onibus {onibus.ContruirRota() }");
+}
+
+void OrderList()
+{
+    var list = new List<string>()
+    {
+     "Rafael",
+     "Augusto",
+     "Miranda"
+    };
+
+    var sort = new SortStrategy(new Descending());
+    list = sort.Sort(list);
+    list.ForEach(x => Console.WriteLine(x));
+
+    Console.WriteLine(Environment.NewLine);
+
+    sort = new SortStrategy(new Ascending());
+    list = sort.Sort(list);
+    list.ForEach(x => Console.WriteLine(x));
 }
 
 

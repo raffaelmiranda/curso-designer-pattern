@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Strategy.Rota
+﻿namespace Strategy.Rota
 {
-    
+
+    /// <summary>
+    /// Context : Uma classe que mantém informações contextuais para um IStrategy algoritmo do bject para trabalhar
+    /// </summary>
     public class Navegacao
     {
         private IRota? _rota;
